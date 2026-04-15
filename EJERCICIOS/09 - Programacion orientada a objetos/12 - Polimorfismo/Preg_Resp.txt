@@ -1,0 +1,26 @@
+Preguntas y respuestas
+
+Que es el polimorfismo en Python?
+El polimorfismo en Python permite que un mismo método o función funcione con diferentes tipos
+de objetos. Dependiendo del objeto con el que se esté trabajando, el comportamiento del método o
+función puede variar.
+
+Que diferencia hay entre polimorfismo y herencia?
+La herencia permite que una clase hija herede métodos y atributos de una clase padre, mientras que
+el polimorfismo permite que diferentes clases implementen los mismos métodos de manera
+diferente, permitiendo un comportamiento flexible y dinámico.
+
+Como funciona el duck typing en Python?
+El duck typing es un principio en Python que se basa en el comportamiento de los objetos, en lugar
+de su tipo. Si un objeto tiene los métodos y atributos correctos, se puede utilizar de la misma
+manera, independientemente de su clase.
+
+Puedo usar polimorfismo sin herencia en Python?
+Sí, el polimorfismo no depende de la herencia. Python permite el polimorfismo mediante la
+implementación de métodos similares en diferentes clases, sin necesidad de que esas clases hereden
+de una clase base común.
+
+Cual es la ventaja del polimorfismo en la programación orientada a objetos?
+El polimorfismo permite que el código sea más flexible, reutilizable y fácil de mantener, ya que
+permite que las mismas funciones o métodos trabajen con diferentes tipos de objetos, sin necesidad
+de escribir múltiples versiones de la función.
