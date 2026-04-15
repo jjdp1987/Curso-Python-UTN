@@ -1,0 +1,55 @@
+🚀 Tu Itinerario Final Consolidado
+Como ya terminaste la configuración técnica, este es el resumen que podés guardar para siempre:
+
+----------------------------------------------------------------------------------------
+En la PC donde terminás de trabajar:
+Si instalaste librerías: pip freeze > requirements.txt (Hacelo en la carpeta que corresponda: CURSO o NutriSport_Pro).
+
+----------------------------------------------------------------------------------------
+Sincronizar:
+PowerShell
+git add .
+git commit -m "Descripción de lo que hiciste"
+git push
+
+----------------------------------------------------------------------------------------
+En la PC donde empezás a trabajar:
+Traer info: git pull.
+----------------------------------------------------------------------------------------
+Sincronizar motor: pip install -r requirements.txt.
+----------------------------------------------------------------------------------------
+
+
+
+*Nota: Si es la primera vez que abrís esa carpeta en esa PC, primero creás el venv: python -m venv venv.utn.
+
+
+🚀 Tu rutina de "Cierre y Apertura":
+----------------------------------------------------------------------------------------
+En la PC A (donde trabajaste):
+
+pip freeze > requirements.txt
+
+
+
+git add .
+
+git commit -m "Actualizo librerías"
+
+git push
+
+----------------------------------------------------------------------------------------
+En la PC B (donde vas a seguir):
+
+git pull
+
+pip install -r requirements.txt
+
+
+
+
+
+
+Mañana
+.\venv.utn\Scripts\activate
+pip install -r requirements.txt

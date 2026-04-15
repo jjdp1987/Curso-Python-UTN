@@ -1,0 +1,19 @@
+Parte Teórica
+
+1. Módulos Principales
+    • datetime: Clases para manipular fechas y horas
+    • time: Funciones relacionadas con tiempo
+    • calendar: Funciones relacionadas con calendario
+    • timedelta: Diferencias entre fechas/tiempos
+    • pytz (externo): Zonas horarias
+
+2. Clases Principales de datetime
+    • date: Solo fecha (año, mes, día)
+    • time: Solo tiempo (hora, minuto, segundo, microsegundo)
+    • datetime: Fecha y hora combinadas
+    • timedelta: Diferencia entre dos fechas/tiempos
+    • tzinfo: Clase base para zonas horarias
+
+    3. Formatos Comunes
+    • ISO 8601: YYYY-MM-DD HH:MM:SS
+    • Timestamp Unix: Segundos desde 1/1/1970

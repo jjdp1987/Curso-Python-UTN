@@ -1,0 +1,37 @@
+#Almacenar una serie de string en un archivo de texto. Tratar de llamar al método 'write' pasando un entero.
+# try:
+#    with open("datos.txt", "w", encoding="utf-8") as archi1:
+#        archi1.write("Primer línea.\n")
+#        archi1.write("Segunda línea.\n")
+#        archi1.write("Tercer línea.\n")
+#        archi1.write(3334)
+# except TypeError:
+#    print("No se puede grabar un entero con write")
+# finally:
+#    archi1.close()
+#    print("Se cerró el archivo")
+#Si ejecutamos este programa al llamar al método write con un dato entero se genera la excepción 'TypeError':
+# archi1.write(3334)
+# except TypeError:
+# print("No se puede grabar un entero con write")
+#Luego de capturarse la excepción 'TypeError' se ejecuta el bloque 'finally' donde se cierra el archivo:
+# finally:
+# archi1.close()
+# print("Se cerró el archivo")
+# Si modificamos el programa y borramos la línea donde grabamos el entero no se capturan
+# excepciones pero si se ejecuta el bloque 'finally' donde se cierra el archivo.
+# Si no existiera la instrucción finally nuestro programa quedaría:
+# try:
+#    with open("datos.txt", "w", encoding="utf-8") as archi1:
+#        archi1.write("Primer línea.\n")
+#        archi1.write("Segunda línea.\n")
+#        archi1.write("Tercer línea.\n")
+#        archi1.write(3334)
+#        print("Se cerró el archivo")
+# except TypeError:
+#    print("No se puede grabar un entero con write")
+# De esta forma el algoritmo tiene el problema que nunca cerrará el archivo ya que no se ejecutará el bloque:
+#  archi1.close()
+#  print("Se cerró el archivo")
+# Es muy común utilizar la cláusula 'finally' para liberar recursos solicitados dentro del bloque 'try'.
+# Veamos con otro ejemplo ya resuelto anteriormente accediendo a una base de datos de MySQL.

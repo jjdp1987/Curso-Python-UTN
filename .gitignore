@@ -1,0 +1,4 @@
+venv.utn/
+__pycache__/
+*.pyc
+pyvenv.cfg
