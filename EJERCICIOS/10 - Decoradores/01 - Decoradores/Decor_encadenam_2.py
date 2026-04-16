@@ -1,5 +1,4 @@
-# Definir dos decoradores con parámetros, uno que permita definir el rango de valores válidos y otro
-# que haga un redondeo.
+# Definir dos decoradores con parámetros, uno que permita definir el rango de valores válidos y otro que haga un redondeo.
 # Programa:
 
 def validar_rango(min_val, max_val):
