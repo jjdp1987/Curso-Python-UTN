@@ -11,6 +11,7 @@ class Pato:
 class Persona:
     def hacer_sonido(self):
         return "Hola!"
+    
 def hacer_sonido_entidad(entidad):
         print(entidad.hacer_sonido())
 

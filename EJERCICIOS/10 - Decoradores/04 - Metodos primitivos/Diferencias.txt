@@ -1,0 +1,12 @@
+Diferencias entre str y repr en Python
+Ahora podemos enumerar cuales son las principales diferencias que existe entre las dos funciones
+son:
+• En el método __str__ debe usarse para crear los mensajes que serán presentados al
+usuario final, por lo que deben ser fácilmente legibles. Mientras que el método __repr__
+se usa para depuración y desarrollo, por lo que sus mensajes ha de ser inequívocos.
+• Además, __repr__ calcula la representación de cadena “oficial” de un objeto y __str__
+se usa para calcular la representación de cadena “informal” de un objeto. Por lo que la
+primera ha de contener más información que la segunda.
+• La función print() usa __str__, al igual que la función str() para generar la cadena
+que representa al objeto. Solo si no se ha definido una implementación de __str__, las dos
+funciones usarán la implementación que exista de __repr__.
