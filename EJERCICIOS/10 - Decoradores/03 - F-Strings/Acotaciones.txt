@@ -1,0 +1,39 @@
+Acotaciones
+• Si queremos insertar los caracteres de apertura o cerrado de llaves en un f-strings debemos
+duplicarlos para que lo interprete Python:
+valor1=10
+print(f"{{valor1}} tiene el valor {valor1}")
+Luego el string que se imprime en pantalla es:
+{valor1} tiene el valor 10
+• Podemos utilizar tanto el caracter "f" minúscula como el caracter "F" mayúscula para indicar
+que se trata de un f-strings.
+valor1=10
+print(F"{{valor1}} tiene el valor {valor1}")
+• Se puede utilizar los f-strings para cadenas de múltiples líneas:
+valor1=1000
+valor2=340
+suma=valor1+valor2
+cadena=f"""
+{valor1:5}
+{valor2:5}
+-----
+{suma:5}
+"""
+print(cadena)
+El resultado de la ejecución es:
+ 1000
+ 340
+-----
+ 1340
+• Anteriormente sin la sintaxis de los f-strings debíamos convertir todos los datos a string y
+concatenarlos:
+valor1=int(input("Ingrese primer valor:"))
+valor2=int(input("Ingrese segundo valor:"))
+suma=valor1+valor2
+print("La suma de "+str(valor1)+" y "+str(valor2)+" es "+str(suma))
+También podíamos utilizar el método format:
+valor1=int(input("Ingrese primer valor:"))
+valor2=int(input("Ingrese segundo valor:"))
+suma=valor1+valor2
+print("La suma de {} y {} es {}".format(valor1, valor2, suma))
+Con la llegada de los f-strings el código fuente de nuestro programa es mucho más legible.

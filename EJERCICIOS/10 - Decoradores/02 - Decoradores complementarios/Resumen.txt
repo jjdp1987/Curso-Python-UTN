@@ -1,0 +1,64 @@
+Resumen de Conceptos Clave
+Concepto Para qué sirve Sintaxis
+Decorador Modificar comportamiento de funciones @decorador
+Property Controlar acceso a atributos @property, @atributo.setter
+Getter Obtener valor de atributo @property
+Setter Asignar valor con validación @atributo.setter
+Deleter Eliminar atributo @atributo.deleter
+
+Analogía Fácil de Entender
+Piensa en *args y **kwargs como:
+• *args → Una caja donde caen todos los argumentos sin nombre
+• **kwargs → Un formulario donde se guardan los argumentos con nombre
+def procesar_pedido(*args, **kwargs):
+ print("Productos:", args) # Lo que pidió sin especificar
+ print("Detalles:", kwargs) # Cómo lo quiere
+procesar_pedido("pizza", "refresco",
+ tamaño="grande",
+ entrega="domicilio")
+# Productos: ('pizza', 'refresco')
+# Detalles: {'tamaño': 'grande', 'entrega': 'domicilio'}
+Reglas Mnemotécnicas
+• *args → Argumentos Arbitrarios (sin nombre)
+• **kwargs → Keyword Arguments (con nombre)
+Resumen
+Parámetro Recibe Se convierte
+en
+Uso en decoradores
+*args Argumentos
+posicionales Tupla Para que el decorador funcione con cualquier
+función
+**kwargs Argumentos con
+nombre Diccionario Para que el decorador funcione con cualquier
+función
+La clave: Usar *args, **kwargs en decoradores hace que sean flexibles y funcionen con
+cualquier función, sin importar cuántos argumentos tenga.
+
+Desglose Detallado
+*args - Argumentos Posicionales
+def ejemplo_args(*args):
+ print("Args recibidos:", args)
+ print("Tipo de args:", type(args)) # ¡Es una tupla!
+ for i, arg in enumerate(args):
+ print(f"Argumento {i}: {arg}")
+# Pruebas
+ejemplo_args(1, 2, 3)
+# Args recibidos: (1, 2, 3)
+# Tipo de args: <class 'tuple'>
+# Argumento 0: 1
+# Argumento 1: 2
+# Argumento 2: 3
+ejemplo_args("a", "b", "c", "d")
+# Args recibidos: ('a', 'b', 'c', 'd')
+**kwargs - Argumentos con Nombre
+def ejemplo_kwargs(**kwargs):
+ print("Kwargs recibidos:", kwargs)
+ print("Tipo de kwargs:", type(kwargs)) # ¡Es un diccionario!
+ for clave, valor in kwargs.items():
+ print(f"{clave}: {valor}")
+# Pruebas
+ejemplo_kwargs(nombre="Ana", edad=25, ciudad="Madrid")
+# Kwargs recibidos: {'nombre': 'Ana', 'edad': 25, 'ciudad': 'Madrid'}
+# nombre: Ana
+# edad: 25
+# ciudad: Madrid
