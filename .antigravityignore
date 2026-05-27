@@ -1,0 +1,9 @@
+# Bloquear el entorno virtual de la UTN
+venv.utn/
+
+# Bloquear carpetas de compilación en cualquier nivel de los ejercicios
+**/__pycache__/
+**/*.pyc
+
+# Bloquear anotadores de organización personal si los hubiera
+Itinerario.txt
