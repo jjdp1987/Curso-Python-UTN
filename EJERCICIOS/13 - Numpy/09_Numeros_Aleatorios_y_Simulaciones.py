@@ -19,7 +19,7 @@ print("9.1c Enteros aleatorios:", np.random.randint(1, 10, size=5))
 # NumPy permite simular distribuciones estadísticas.
 
 # a) Distribución uniforme ( np.random.uniform )
-# Genera valores entre un rango [a, b) con probabilidad uniforme.
+# Genera valores entre un rango [a, b) con probabilidad uniforme. 
 arr = np.random.uniform(0, 10, size=5)
 print("9.2a Distribución uniforme [0,10):", arr)
 
