@@ -1,0 +1,28 @@
+# Ejercicio 2: Crear una matriz 3x3 con valores del 1 al 9 y realizar:
+# Transpuesta de la matriz.
+# Sumas por filas y por columnas.
+# Extraer la segunda columna.
+import numpy as np
+
+mat = np.arange(1, 10).reshape(3, 3)
+print("Matriz:\n", mat)
+# Transpuesta
+print("Transpuesta:\n", mat.T)
+# Suma por filas (axis=1)
+print("Suma por filas:", mat.sum(axis=1))
+# Suma por columnas (axis=0)
+print("Suma por columnas:", mat.sum(axis=0))
+# Segunda columna
+print("Segunda columna:", mat[:, 1])
+# Salida:
+# Matriz:
+# [[1 2 3]
+# [4 5 6]
+# [7 8 9]]
+# Transpuesta:
+# [[1 4 7]
+# [2 5 8]
+# [3 6 9]]
+# Suma por filas: [ 6 15 24]
+# Suma por columnas: [12 15 18]
+# Segunda columna: [2 5 8]
