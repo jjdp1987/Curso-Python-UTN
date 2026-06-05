@@ -1,0 +1,92 @@
+Consigna 0: Preparación del Entorno en VSC
+Crea una carpeta para este proyecto y dentro crea un archivo llamado deportistas.csv. Copia y pega exactamente esto adentro y guárdalo:
+
+ID,Nombre,Deporte,Peso_kg,Masa_Adiposa_kg,Masa_Muscular_kg,NEAT_kcal,METs_promedio,Lesionado
+1,Facundo,Fútbol,78.5,12.1,38.4,450,8.5,No
+2,Tomas,Maratón,65.2,7.5,33.1,600,12.0,No
+3,Emilio,Fútbol,82.0,14.2,39.8,400,8.0,Sí
+4,Julieta,Maratón,58.4,9.1,27.5,550,11.5,No
+5,Lucia,Fútbol,63.1,11.0,29.2,480,8.5,No
+6,Jose,Fútbol,85.3,15.5,41.0,350,7.5,Sí
+7,Camila,Maratón,55.0,8.2,26.0,620,12.5,No
+8,Antonella,Fútbol,61.5,,28.5,490,8.0,No
+9,Jonatan,Fútbol,79.8,13.0,38.9,420,8.5,No
+10,Ariel,Maratón,68.0,8.0,,580,11.0,Sí
+
+
+Consigna 1 Importación y Exploración Inicial:
+
+Crea un archivo en VSC llamado ejercicio_pandas.py.
+
+a- Importa la librería pandas.
+
+b- Carga el archivo deportistas.csv en un DataFrame (la estructura principal de Pandas).
+
+c-  Imprime tu DataFrame inicial para verificar que se cargó correctamente.
+
+d- Imprime en consola los primeros 5 registros para verificar que se cargó bien.
+
+e- Imprime un resumen de la información del DataFrame que te muestre los tipos de datos de cada columna y cuántos valores nulos hay.
+
+f- Imprime un resumen de la información del DataFrame que te muestre los tipos de datos de cada columna y cuántos valores nulos hay.
+
+
+
+Consigna 2 Limpieza de Datos (Manejo de Nulos):
+
+a- La jugadora Antonella no tiene dato de Masa_Adiposa_kg. Vamos a rellenar ese hueco con el promedio de masa adiposa de todo el plantel.
+- (Pista: Averigua cómo usar el método .fillna() en esa columna específica, combinándolo con el método .mean().)
+
+b- El corredor Ariel no tiene dato en Masa_Muscular_kg. Como consideramos que es un dato crítico que no queremos estimar, vamos a eliminar su fila completa.
+- (Pista: Averigua cómo usar el método .dropna() y su parámetro subset para eliminar solo las filas donde falte este dato en particular.)
+
+c- Imprime tu DataFrame final (print(df)) y un nuevo print(df.info()) para comprobar que ahora tienes 9 registros en total y cero valores nulos.
+
+
+Consigna 3 Creación de Nuevas Columnas (Ingeniería de Variables):
+
+a- Crear la columna Porcentaje_Musculo: * Dividí la columna Masa_Muscular_kg por la columna Peso_kg, y al resultado multiplicalo por 100.
+
+b- Crear la columna Gasto_Ejercicio_kcal: Gasto = METs promedio x Peso Peso_kg
+- Multiplicá la columna METs_promedio por Peso_kg
+
+c- Crear la columna Gasto_Total_Estimado_kcal:
+
+d- Presentar solo Nombre', 'Porcentaje_Musculo', 'Gasto_Total_Estimado_kcal
+
+
+Consigna 4 Filtrado, Agrupamiento y Ordenamiento:
+
+a- Filtrar deportistas lesionados (Filtro Condicional):
+Kinesiología necesita la lista de los jugadores que están actualmente lesionados para ajustar sus cargas.
+- Crea un nuevo DataFrame llamado df_lesionados que contenga solo a los deportistas donde la columna Lesionado sea igual a "Sí".
+- Pista de sintaxis: En Pandas se filtra poniendo la condición dentro de los corchetes del DataFrame: df_nuevo = df[df["Columna"] == "Valor"].
+- Imprimí df_lesionados.
+
+b- Gasto energético por deporte (Agrupamiento):
+Queremos ver si hay diferencias significativas en el gasto total estimado entre los futbolistas y los maratonistas de nuestro plantel.
+- Agrupá los datos por la columna Deporte y calculá el promedio (mean()) de la columna Gasto_Total_Estimado_kcal.
+- Pista de sintaxis: promedio_por_deporte = df.groupby("Columna_a_Agrupar")["Columna_a_Calcular"].mean()
+- Imprimí promedio_por_deporte.
+
+c- Ranking de masa muscular (Ordenamiento):
+Queremos ver quiénes son los deportistas con mayor porcentaje de músculo.
+- Ordená tu DataFrame original (df) usando la columna Porcentaje_Musculo de mayor a menor (orden descendente).
+- Pista de sintaxis: Usá el método .sort_values(). Vas a necesitar los parámetros by="Columna" y ascending=False. Para que el cambio quede guardado, acordate de usar inplace=True.
+- Imprimí las columnas de Nombre y Porcentaje_Musculo de tu DataFrame ya ordenado usando un head(3) al final para ver solo el Top 3. (Ejemplo: print(df[['Col1', 'Col2']].head(3))).
+
+
+Consigna 5 Cruce de Datos (Merge) y Exportación:
+
+a- Crear el segundo DataFrame (La tabla de suplementación):
+- Copiá y pegá este pequeño código para simular la tabla que nos envía el cuerpo técnico:
+
+b- Cruzar los datos (Merge):
+- Vas a unir tu DataFrame principal (df) con este nuevo df_suplementos. Como ambos tienen una columna en común llamada Deporte, Pandas es lo suficientemente inteligente para usarla como "llave" y asignarle a cada jugador su suplemento correspondiente.
+- Pista de sintaxis: df_completo = pd.merge(df, df_suplementos, on="Columna_en_comun", how="left")
+- Imprimí las columnas Nombre, Deporte y Suplemento_Base de tu nuevo df_completo para verificar que el cruce haya funcionado.
+
+c- Exportar el resultado final:
+- Todo este trabajo no sirve de nada si se queda solo en la consola. Vamos a exportar el df_completo a un archivo .csv nuevo, limpio y procesado, que luego podrías abrir en Excel o usar de base para tus calculadoras.
+- Pista de sintaxis: Usá el método .to_csv(). Pasale como primer parámetro el nombre del archivo ("deportistas_procesado.csv") y agregá el parámetro index=False para que Pandas no te exporte los números de fila (0, 1, 2...), ya que en Excel no los necesitamos.
+- Imprimí un mensaje final en consola que diga "¡Archivo exportado con éxito!".
